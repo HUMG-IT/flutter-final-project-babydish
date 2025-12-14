@@ -123,8 +123,10 @@ class _EditDeviceScreenState extends State<EditDeviceScreen> {
                 ),
                 keyboardType: TextInputType.number,
                 validator: (value) {
-                  if (value == null || value.isEmpty)
+                  if (value == null || value.isEmpty) {
                     return 'Vui lòng nhập số lượng';
+                  }
+
                   if (int.tryParse(value) == null) return 'Phải nhập số';
                   if (int.parse(value) <= 0) return 'Số lượng phải lớn hơn 0';
                   return null;
@@ -144,7 +146,7 @@ class _EditDeviceScreenState extends State<EditDeviceScreen> {
                   subtitle: Text(
                       _isOperational ? 'Đang hoạt động' : 'Đang bảo trì/Hỏng'),
                   value: _isOperational,
-                  activeColor: Colors.green,
+                  activeTrackColor: Colors.green,
                   onChanged: (val) {
                     setState(() {
                       _isOperational = val;
