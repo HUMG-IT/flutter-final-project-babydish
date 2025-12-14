@@ -14,6 +14,14 @@
 **Mô tả:**
 Đây là ứng dụng di động được xây dựng bằng Flutter nhằm giải quyết vấn đề quản lý kho thiết bị phần cứng (GPU, Kit nhúng, Cảm biến, v.v.) trong các phòng Lab AI. Ứng dụng cho phép người dùng theo dõi số lượng, tình trạng hoạt động của thiết bị và đồng bộ dữ liệu theo thời gian thực (Real-time).
 
+**Mô tả quá trình phát triển**
+Quá trình xây dựng ứng dụng **AI Lab Manager** được chia thành các giai đoạn cụ thể:
+1.  **Phân tích & Thiết kế:** Xác định yêu cầu quản lý thiết bị, thiết kế Model dữ liệu (`Device`) và giao diện người dùng (UI) trên giấy và Figma.
+2.  **Xây dựng Giao diện (UI):** Sử dụng Flutter để code các màn hình danh sách, thêm/sửa và các Widget hiển thị trạng thái.
+3.  **Tích hợp Backend:** Kết nối ứng dụng với **Firebase Firestore**. Chuyển đổi từ dữ liệu local sang dữ liệu đám mây (Cloud) để hỗ trợ đồng bộ thời gian thực (Real-time).
+4.  **Quản lý trạng thái:** Áp dụng **Provider** để tách biệt logic xử lý khỏi giao diện, giúp code sạch và dễ bảo trì.
+5.  **Kiểm thử & Tối ưu:** Viết Unit Test và Widget Test. Cấu hình CI/CD để tự động hóa quy trình kiểm tra lỗi.
+
 ---
 
 ## 2. Các chức năng chính (Features)
@@ -43,9 +51,9 @@ Dự án áp dụng các công nghệ hiện đại theo yêu cầu đề bài:
 * **Framework:** Flutter (Dart).
 * **State Management:** `provider` (Quản lý trạng thái ứng dụng hiệu quả, tách biệt Logic và UI).
 * **Backend / Database:** `firebase_core`, `cloud_firestore` (Lưu trữ dữ liệu đám mây NoSQL, hỗ trợ đồng bộ thời gian thực).
-* **Utilities:**
-    * `uuid`: Tạo ID định danh duy nhất.
-    * `intl`: Xử lý định dạng dữ liệu.
+* **`uuid`**: Để sinh khóa chính (ID) duy nhất cho từng thiết bị.
+* **`intl`**: Để định dạng hiển thị ngày tháng và số liệu.
+* **`cupertino_icons`**: Bộ icon chuẩn cho giao diện đẹp mắt.
 * **Testing:** `flutter_test` (Thư viện kiểm thử mặc định của Flutter).
 * **CI/CD:** GitHub Actions (Tự động hóa quy trình Build và Test).
 
@@ -71,18 +79,18 @@ flutter run
 ```
 
 ## 5. Kết quả Kiểm thử (Testing) & CI/CD
-Kiểm thử tự động
-Dự án bao gồm các bài kiểm thử Đơn vị (Unit Test) và Giao diện (Widget Test) nằm trong thư mục test/.
+### Kiểm thử tự động
 
-Unit Test (test/device_test.dart): Kiểm tra logic của Device Model (tạo đối tượng, chuyển đổi JSON/Map).
+- Dự án bao gồm các bài kiểm thử Đơn vị (Unit Test) và Giao diện (Widget Test) nằm trong thư mục test/.
 
-Widget Test (test/widget_test.dart): Kiểm tra khả năng render của giao diện người dùng cơ bản.
+- Unit Test (test/device_test.dart): Kiểm tra logic của Device Model (tạo đối tượng, chuyển đổi JSON/Map).
+
+- Widget Test (test/widget_test.dart): Kiểm tra khả năng render của giao diện người dùng cơ bản.
 
 Cách chạy kiểm thử:
-
-Bash
-
+```bash
 flutter test
+```
 Kết quả mong đợi: All tests passed.
 
 CI/CD với GitHub Actions
@@ -90,4 +98,4 @@ File cấu hình workflow nằm tại: .github/workflows/ci.yml
 
 Hệ thống tự động kích hoạt mỗi khi có code được đẩy lên nhánh main.
 
-Trạng thái hiện tại: ✅ Build Success (Đã vượt qua tất cả các bài test trên môi trường Ubuntu-latest).
+Trạng thái hiện tại:  Build Success (Đã vượt qua tất cả các bài test trên môi trường Ubuntu-latest).
