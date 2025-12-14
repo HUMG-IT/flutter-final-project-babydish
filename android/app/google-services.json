@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "559186569560",
+    "project_id": "ai-lab-manager",
+    "storage_bucket": "ai-lab-manager.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:559186569560:android:4661f05b4505ce4ba35d2d",
+        "android_client_info": {
+          "package_name": "com.example.flutter_project"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAqJKWdAmWm4FEwIGFVXEf-RdYS7Q5ND7g"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

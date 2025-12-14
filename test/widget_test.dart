@@ -1,13 +1,18 @@
-import 'package:flutter_test/flutter_test.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_test/flutter_test.dart';
 
 void main() {
-  testWidgets('hello world widget test', (WidgetTester tester) async {
+  testWidgets('Check basic UI elements', (WidgetTester tester) async {
+    // Tạo một nút bấm đơn giản để test (tránh gọi vào Firebase thật)
     await tester.pumpWidget(
       const MaterialApp(
-        home: Scaffold(body: Text('Hello, World!')),
+        home: Scaffold(
+          body: Center(child: Text('AI Lab Manager')),
+        ),
       ),
     );
-    expect(find.text('Hello, World!'), findsOneWidget);
+
+    // Kiểm tra xem chữ 'AI Lab Manager' có hiện ra không
+    expect(find.text('AI Lab Manager'), findsOneWidget);
   });
 }
