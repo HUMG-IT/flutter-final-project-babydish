@@ -99,3 +99,13 @@ File cấu hình workflow nằm tại: .github/workflows/ci.yml
 Hệ thống tự động kích hoạt mỗi khi có code được đẩy lên nhánh main.
 
 Trạng thái hiện tại:  Build Success (Đã vượt qua tất cả các bài test trên môi trường Ubuntu-latest).
+
+## 6. Tự đánh giá
+5/10: Build thành công, kiểm thử cơ bản chạy được. [X]
+6/10: CRUD cơ bản với một đối tượng. [X]
+7/10: CRUD và quản lý trạng thái (hiển thị giao diện cơ bản). [X]
+8/10: CRUD, trạng thái, và tích hợp API/CSDL với thông báo lỗi. [X]
+9/10: Hoàn thiện kiểm thử CRUD, trạng thái, tích hợp API/CSDL; UI thân thiện. [X]
+10/10: Tối ưu hóa hoàn chỉnh, UI/UX mượt mà, CI/CD đầy đủ và ổn định.
+
+Tự đánh giá điểm: 9/10
